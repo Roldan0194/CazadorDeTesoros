@@ -1,0 +1,16 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.bodyBackground{
+	-fx-background-image: url("InicioPrueba.png");
+}
+
+.escenarioBackground{
+        -fx-background-image: url("Escenario.png");
+}
+
+.preguntasPuertasBackground {
+    	-fx-background-image: url("PreguntasPuerta.png");
+}
+

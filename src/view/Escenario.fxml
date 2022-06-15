@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="677.0" styleClass="escenarioBackground" stylesheets="@../Images/inicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cazadordetesoros.EscenarioController">
+   <children>
+      <Button fx:id="btnCofre1" layoutX="65.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleButtonCofre1" opacity="0.0" prefHeight="44.0" prefWidth="71.0" text="btnC1">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="labelPruebas" layoutX="248.0" layoutY="837.0" prefHeight="48.0" prefWidth="181.0" text="Label">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCofre2" layoutX="540.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleButtonCofre2" opacity="0.0" prefHeight="44.0" prefWidth="71.0" text="btnC2">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre3" layoutX="291.0" layoutY="57.0" mnemonicParsing="false" onAction="#handleButtonCofre3" opacity="0.0" prefHeight="75.0" prefWidth="105.0" text="btnC3">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre4" layoutX="44.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleButtonCofre4" opacity="0.0" prefHeight="66.0" prefWidth="51.0" text="btnC4">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre5" layoutX="586.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleButtonCofre5" opacity="0.0" prefHeight="66.0" prefWidth="45.0" text="btnC5">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre6" layoutX="47.0" layoutY="480.0" mnemonicParsing="false" onAction="#handleButtonCofre6" opacity="0.0" prefHeight="66.0" prefWidth="45.0" text="btnC6">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre7" layoutX="586.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleButtonCofre7" opacity="0.0" prefHeight="66.0" prefWidth="45.0" text="btnC7">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre8" layoutX="47.0" layoutY="666.0" mnemonicParsing="false" onAction="#handleButtonCofre8" opacity="0.0" prefHeight="66.0" prefWidth="45.0" text="btnC8">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCofre9" layoutX="586.0" layoutY="666.0" mnemonicParsing="false" onAction="#handleButtonCofre9" opacity="0.0" prefHeight="66.0" prefWidth="45.0" text="btnC9">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="gate8" layoutX="291.0" layoutY="784.0" maxHeight="14.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate8" prefHeight="14.0" prefWidth="96.0" style="-fx-background-color: PERU;" text="gate8" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate6" layoutX="201.0" layoutY="692.0" maxHeight="44.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate6" prefHeight="14.0" prefWidth="58.0" rotate="90.0" style="-fx-background-color: PERU;" text="gate6" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate7" layoutX="419.0" layoutY="692.0" maxHeight="44.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate7" prefHeight="14.0" prefWidth="58.0" rotate="90.0" style="-fx-background-color: PERU;" text="gate7" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate4" layoutX="201.0" layoutY="510.0" maxHeight="44.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate4" prefHeight="14.0" prefWidth="58.0" rotate="90.0" style="-fx-background-color: PERU;" text="gate4" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate5" layoutX="420.0" layoutY="510.0" maxHeight="44.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate5" prefHeight="14.0" prefWidth="58.0" rotate="90.0" style="-fx-background-color: PERU;" text="gate5" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate2" layoutX="201.0" layoutY="327.0" maxHeight="44.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate2" prefHeight="14.0" prefWidth="58.0" rotate="90.0" style="-fx-background-color: PERU;" text="gate2" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate3" layoutX="420.0" layoutY="328.0" maxHeight="44.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate3" prefHeight="14.0" prefWidth="58.0" rotate="90.0" style="-fx-background-color: PERU;" text="gate3" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gate1" layoutX="291.0" layoutY="237.0" maxHeight="14.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate1" prefHeight="14.0" prefWidth="96.0" style="-fx-background-color: PERU;" text="gate1" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</Pane>
