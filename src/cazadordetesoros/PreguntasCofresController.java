@@ -6,7 +6,10 @@ package cazadordetesoros;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -14,7 +17,27 @@ import javafx.fxml.Initializable;
  * @author Roldan
  */
 public class PreguntasCofresController implements Initializable {
+    
+        Label Pregunta;
 
+        public void handleButtonRpt1(ActionEvent event)throws Exception{
+            JOptionPane.showMessageDialog(null, "Cofre9");
+            
+        }
+        public void handleButtonRpt2(ActionEvent event)throws Exception{
+            JOptionPane.showMessageDialog(null, "Cofre9");         
+        }
+        public void handleButtonRpt3(ActionEvent event)throws Exception{
+            JOptionPane.showMessageDialog(null, "Cofre9");         
+        }
+        public void handleButtonRpt4(ActionEvent event)throws Exception{
+            JOptionPane.showMessageDialog(null, "Cofre9");          
+        }
+        
+        public void recibirParametros(String Text){
+            Pregunta.setText(Text);
+        }
+    
     /**
      * Initializes the controller class.
      */

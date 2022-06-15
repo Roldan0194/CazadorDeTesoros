@@ -7,27 +7,27 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="1242.0" styleClass="preguntasPuertasBackground" stylesheets="@../Images/inicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cazadordetesoros.PreguntasPuertasController">
    <children>
-      <Label alignment="CENTER" layoutX="94.0" layoutY="162.0" prefHeight="392.0" prefWidth="526.0" text="Texto de prueba otra palabra que se ocurra en este momento sirve para hacer esta prueba ademas debemos acabar a tiempo ese trabajo porque es justo tener buenas notas y ademas esta historia debe ser larga para aprovechar el campo de este texto" textAlignment="JUSTIFY" wrapText="true">
+      <Label fx:id="Pregunta" alignment="CENTER" layoutX="94.0" layoutY="162.0" prefHeight="392.0" prefWidth="526.0" text="●Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? " textAlignment="JUSTIFY" wrapText="true">
          <font>
             <Font name="Lucida Handwriting Italic" size="26.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="160.0" prefHeight="63.0" prefWidth="429.0" text="Respuesta 1">
+      <Label layoutX="769.0" layoutY="160.0" prefHeight="63.0" prefWidth="429.0" text="102 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="277.0" prefHeight="63.0" prefWidth="429.0" text="Respuesta 1">
+      <Label layoutX="769.0" layoutY="277.0" prefHeight="63.0" prefWidth="429.0" text="110 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="409.0" prefHeight="63.0" prefWidth="429.0" text="Respuesta 1">
+      <Label layoutX="769.0" layoutY="409.0" prefHeight="63.0" prefWidth="429.0" text="95 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="544.0" prefHeight="63.0" prefWidth="429.0" text="Respuesta 1">
+      <Label layoutX="769.0" layoutY="544.0" prefHeight="63.0" prefWidth="429.0" text="87 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
@@ -38,8 +38,8 @@
          </font>
       </Label>
       <Button fx:id="btnRpt1" layoutX="754.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleButtonRpt1" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
-      <Button fx:id="btnRpt2" layoutX="754.0" layoutY="274.0" mnemonicParsing="false" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
-      <Button fx:id="btnRpt3" layoutX="754.0" layoutY="406.0" mnemonicParsing="false" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
-      <Button fx:id="btnRpt4" layoutX="755.0" layoutY="541.0" mnemonicParsing="false" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
+      <Button fx:id="btnRpt2" layoutX="754.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleButtonRpt2" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
+      <Button fx:id="btnRpt3" layoutX="754.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleButtonRpt3" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
+      <Button fx:id="btnRpt4" layoutX="755.0" layoutY="541.0" mnemonicParsing="false" onAction="#handleButtonRpt4" opacity="0.0" prefHeight="70.0" prefWidth="457.0" text="Button" />
    </children>
 </Pane>

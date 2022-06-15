@@ -17,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javax.swing.JOptionPane;
@@ -27,7 +29,10 @@ import javax.swing.JOptionPane;
  * @author Roldan
  */
 public class EscenarioController implements Initializable {
-    
+        
+        EscenarioController EscenarioVentana;
+        PreguntasPuertasController PPuertas;
+        String Respuesta = "";
         public Button gate8;
         public Button gate7;
         public Button gate6;
@@ -36,17 +41,22 @@ public class EscenarioController implements Initializable {
         public Button gate3;
         public Button gate2;
         public Button gate1;
+
+            
         
         @FXML
         public Label labelPruebas;
         
         //METODOS DE LOS BOTONES DE LOS COFRES
         @FXML
-        public void handleButtonCofre1(ActionEvent event){
+        public void handleButtonCofre1(ActionEvent event)throws Exception{
             labelPruebas.setText("Boton1");
+            loadStage("/view/preguntasCofres.fxml",event);
+            
         }
         public void handleButtonCofre2(ActionEvent event){
             labelPruebas.setText("Boton2");
+            
         }
         public void handleButtonCofre3(ActionEvent event){
             labelPruebas.setText("Boton3");
@@ -72,38 +82,54 @@ public class EscenarioController implements Initializable {
         }
         ///METODOS DE LOS BOTONES DE LAS PUERTAS
         public void handleButtonGate8(ActionEvent event)throws Exception{
-            loadStage("/view/preguntasPuertas.fxml" , event);
+            //loadStage("/view/preguntasPuertas.fxml" , event);
             labelPruebas.setText("gate8");
             //gate8.setVisible(false);
         }
-        public void handleButtonGate7(ActionEvent event){
-            labelPruebas.setText("gate7");
-            gate7.setVisible(false);
+        public void handleButtonGate7(ActionEvent event) throws Exception{
+            loadStage("/view/preguntasPuertas.fxml" , event);
+            //gate7.setVisible(false);
         }
-        public void handleButtonGate6(ActionEvent event){
+        public void handleButtonGate6(ActionEvent event)throws Exception{
             labelPruebas.setText("gate6");
             gate6.setVisible(false);
         }
-        public void handleButtonGate5(ActionEvent event){
+        public void handleButtonGate5(ActionEvent event)throws Exception{
             labelPruebas.setText("gate5");
             gate5.setVisible(false);
         }
-        public void handleButtonGate4(ActionEvent event){
+        public void handleButtonGate4(ActionEvent event)throws Exception{
             labelPruebas.setText("gate4");
             gate4.setVisible(false);
         }
-        public void handleButtonGate3(ActionEvent event){
+        public void handleButtonGate3(ActionEvent event)throws Exception{
             labelPruebas.setText("gate3");
             gate3.setVisible(false);
         }
-        public void handleButtonGate2(ActionEvent event){
+        public void handleButtonGate2(ActionEvent event)throws Exception{
             labelPruebas.setText("gate2");
             gate2.setVisible(false);
         }
-        public void handleButtonGate1(ActionEvent event){
+        public void handleButtonGate1(ActionEvent event)throws Exception{
             labelPruebas.setText("gate1");
             gate1.setVisible(false);
         }
+        
+        public void recibirRpt (String texto){
+            labelPruebas.setText("BotonRpt");
+            Respuesta = texto;
+            if (Respuesta == "RespuestaCorrecta"){
+                gate7.setVisible(false);                
+            }  
+         
+        }
+        public void recibirRptCofre (String texto){
+            labelPruebas.setText("BotonRpt");
+            Respuesta = texto;
+            if (Respuesta == "RespuestaCorrecta"){
+                gate7.setVisible(false);                
+            }           
+        }       
         
         
         public void loadStage(String url, Event evt)throws Exception{
@@ -113,14 +139,28 @@ public class EscenarioController implements Initializable {
         Scene EscenaAnt = NodoSource.getScene();
         Window VentanaActual = EscenaAnt.getWindow();
         Stage stage = (Stage) VentanaActual;
-        //stage.hide();
-        
+        stage.hide();
+               
         Parent root = (Parent) FXMLLoader.load(getClass().getResource(url));
         Scene EscenaNueva = new Scene(root);
         Stage StageNuevo = new Stage();
         StageNuevo.setScene(EscenaNueva);
         StageNuevo.show();        
         
+     }
+        
+        public void preguntaPuerta()throws Exception{   
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/view/preguntasPuertas.fxml"));
+
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            
+            PreguntasPuertasController Pregunta = (PreguntasPuertasController)fxmlLoader.getController();
+            Pregunta.recibirParametros2("Prueba Texto");
+            stage.show();
      }
 
     /**
@@ -129,6 +169,8 @@ public class EscenarioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        EscenarioVentana = this;
+        gate8.setVisible(false);
     }    
     
 }

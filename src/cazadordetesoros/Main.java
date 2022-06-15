@@ -32,6 +32,8 @@ public class Main extends Application {
         primaryStage.show();
     }
     
+    //Texto de prueba
+    
     /**
      * @param args the command line arguments
      */
