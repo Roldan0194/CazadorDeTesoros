@@ -35,15 +35,19 @@ public class PreguntasPuertasController implements Initializable {
         
         public void handleButtonRpt1(ActionEvent event)throws Exception{
             EnvioRespuesta("RespuestaCorrecta", event);
+            JOptionPane.showMessageDialog(null, "Respuesta correcta puerta abierta");
         }
         public void handleButtonRpt2(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaIncorrecta", event);          
+            EnvioRespuesta("RespuestaIncorrecta", event);
+            JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
         }
         public void handleButtonRpt3(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaIncorrecta", event);          
+            EnvioRespuesta("RespuestaIncorrecta", event);
+            JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
         }
         public void handleButtonRpt4(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaIncorrecta", event);          
+            EnvioRespuesta("RespuestaIncorrecta", event);
+            JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
         }
         @FXML
         public void recibirParametros(EscenarioController Escenario1, String Text){
@@ -91,26 +95,7 @@ public class PreguntasPuertasController implements Initializable {
             Stage stage1 = (Stage) VentanaActual;
             stage1.hide();
      }
-        public void EnvioRespuesta2(String Rpt, Event evt)throws Exception{   
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/view/Escenario.fxml"));
 
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initModality(Modality.APPLICATION_MODAL);
-            
-            EscenarioController Escenario = (EscenarioController)fxmlLoader.getController();
-            Escenario.recibirRptCofre(Rpt);
-            stage.show();
-            
-            Object evtSource = evt.getSource();
-            Node NodoSource = (Node) evtSource;
-            Scene EscenaAnt = NodoSource.getScene();
-            Window VentanaActual = EscenaAnt.getWindow();
-            Stage stage1 = (Stage) VentanaActual;
-            stage1.hide();
-     }
     
     /**
      * Initializes the controller class.

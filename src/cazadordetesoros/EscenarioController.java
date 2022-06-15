@@ -41,7 +41,7 @@ public class EscenarioController implements Initializable {
         public Button gate3;
         public Button gate2;
         public Button gate1;
-
+        public boolean gate7State = false;
             
         
         @FXML
@@ -50,40 +50,40 @@ public class EscenarioController implements Initializable {
         //METODOS DE LOS BOTONES DE LOS COFRES
         @FXML
         public void handleButtonCofre1(ActionEvent event)throws Exception{
-            labelPruebas.setText("Boton1");
-            loadStage("/view/preguntasCofres.fxml",event);
-            
+            //labelPruebas.setText("Boton1");           
         }
         public void handleButtonCofre2(ActionEvent event){
-            labelPruebas.setText("Boton2");
+            //labelPruebas.setText("Boton2");
             
         }
         public void handleButtonCofre3(ActionEvent event){
-            labelPruebas.setText("Boton3");
+            //labelPruebas.setText("Boton3");
         }
         public void handleButtonCofre4(ActionEvent event){
-            labelPruebas.setText("Boton4");
+            //labelPruebas.setText("Boton4");
         }
         public void handleButtonCofre5(ActionEvent event){
-            labelPruebas.setText("Boton5");
+            //labelPruebas.setText("Boton5");
         }
         public void handleButtonCofre6(ActionEvent event){
-            labelPruebas.setText("Boton6");
+            //labelPruebas.setText("Boton6");
         }
         public void handleButtonCofre7(ActionEvent event){
-            labelPruebas.setText("Boton7");
+            //labelPruebas.setText("Boton7");
         }
         public void handleButtonCofre8(ActionEvent event){
-            labelPruebas.setText("Boton8");
+            //labelPruebas.setText("Boton8");
         }
-        public void handleButtonCofre9(ActionEvent event){
-            labelPruebas.setText("Boton9");
-            JOptionPane.showMessageDialog(null, "Cofre9");
+        public void handleButtonCofre9(ActionEvent event) throws Exception{
+            if (gate7State)
+                loadStage("/view/preguntasCofres.fxml",event);
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         ///METODOS DE LOS BOTONES DE LAS PUERTAS
         public void handleButtonGate8(ActionEvent event)throws Exception{
             //loadStage("/view/preguntasPuertas.fxml" , event);
-            labelPruebas.setText("gate8");
+            //labelPruebas.setText("gate8");
             //gate8.setVisible(false);
         }
         public void handleButtonGate7(ActionEvent event) throws Exception{
@@ -91,27 +91,27 @@ public class EscenarioController implements Initializable {
             //gate7.setVisible(false);
         }
         public void handleButtonGate6(ActionEvent event)throws Exception{
-            labelPruebas.setText("gate6");
+            //labelPruebas.setText("gate6");
             gate6.setVisible(false);
         }
         public void handleButtonGate5(ActionEvent event)throws Exception{
-            labelPruebas.setText("gate5");
+            //labelPruebas.setText("gate5");
             gate5.setVisible(false);
         }
         public void handleButtonGate4(ActionEvent event)throws Exception{
-            labelPruebas.setText("gate4");
+            //labelPruebas.setText("gate4");
             gate4.setVisible(false);
         }
         public void handleButtonGate3(ActionEvent event)throws Exception{
-            labelPruebas.setText("gate3");
+            //labelPruebas.setText("gate3");
             gate3.setVisible(false);
         }
         public void handleButtonGate2(ActionEvent event)throws Exception{
-            labelPruebas.setText("gate2");
+            //labelPruebas.setText("gate2");
             gate2.setVisible(false);
         }
         public void handleButtonGate1(ActionEvent event)throws Exception{
-            labelPruebas.setText("gate1");
+            //labelPruebas.setText("gate1");
             gate1.setVisible(false);
         }
         
@@ -119,16 +119,19 @@ public class EscenarioController implements Initializable {
             labelPruebas.setText("BotonRpt");
             Respuesta = texto;
             if (Respuesta == "RespuestaCorrecta"){
-                gate7.setVisible(false);                
+                gate7.setVisible(false);
+                gate7State = true;
             }  
          
         }
         public void recibirRptCofre (String texto){
             labelPruebas.setText("BotonRpt");
             Respuesta = texto;
-            if (Respuesta == "RespuestaCorrecta"){
-                gate7.setVisible(false);                
-            }           
+            if (gate7State){
+                if (Respuesta == "RespuestaCorrecta"){
+                    JOptionPane.showMessageDialog(null, "CofreAbierto");              
+                } 
+            }
         }       
         
         
