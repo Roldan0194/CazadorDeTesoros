@@ -30,18 +30,12 @@ import javax.swing.JOptionPane;
  */
 public class EscenarioController implements Initializable {
         
-        EscenarioController EscenarioVentana;
-        PreguntasPuertasController PPuertas;
+        //EscenarioController EscenarioVentana;
+        //PreguntasPuertasController PPuertas;
         String Respuesta = "";
-        public Button gate8;
-        public Button gate7;
-        public Button gate6;
-        public Button gate5;
-        public Button gate4;
-        public Button gate3;
-        public Button gate2;
-        public Button gate1;
-        public boolean gate7State = false;
+        public Button gate8, gate7, gate6, gate5, gate4, gate3, gate2, gate1;
+        public boolean gate8State, gate7State, gate6State, gate5State, 
+                gate4State, gate3State, gate2State, gate1State ;
             
         
         @FXML
@@ -76,43 +70,56 @@ public class EscenarioController implements Initializable {
         }
         public void handleButtonCofre9(ActionEvent event) throws Exception{
             if (gate7State)
-                loadStage("/view/preguntasCofres.fxml",event);
+                PreguntaCofres("/view/preguntasCofres.fxml",event);
             else
                 JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         ///METODOS DE LOS BOTONES DE LAS PUERTAS
         public void handleButtonGate8(ActionEvent event)throws Exception{
-            //loadStage("/view/preguntasPuertas.fxml" , event);
-            //labelPruebas.setText("gate8");
-            //gate8.setVisible(false);
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 8);
         }
         public void handleButtonGate7(ActionEvent event) throws Exception{
-            loadStage("/view/preguntasPuertas.fxml" , event);
-            //gate7.setVisible(false);
+            if (gate8State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 7);
+            else 
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta principal");
         }
         public void handleButtonGate6(ActionEvent event)throws Exception{
-            //labelPruebas.setText("gate6");
-            gate6.setVisible(false);
+            if (gate8State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 6);
+            else 
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta principal");
         }
         public void handleButtonGate5(ActionEvent event)throws Exception{
-            //labelPruebas.setText("gate5");
-            gate5.setVisible(false);
+            if (gate8State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 5);
+            else 
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta principal");
         }
         public void handleButtonGate4(ActionEvent event)throws Exception{
-            //labelPruebas.setText("gate4");
-            gate4.setVisible(false);
+            if (gate8State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 4);
+            else 
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta principal");
         }
         public void handleButtonGate3(ActionEvent event)throws Exception{
-            //labelPruebas.setText("gate3");
-            gate3.setVisible(false);
+            if (gate8State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 3);
+            else 
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta principal");
         }
         public void handleButtonGate2(ActionEvent event)throws Exception{
-            //labelPruebas.setText("gate2");
-            gate2.setVisible(false);
+            if (gate8State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 2);
+            else 
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta principal");
         }
         public void handleButtonGate1(ActionEvent event)throws Exception{
-            //labelPruebas.setText("gate1");
-            gate1.setVisible(false);
+            if (gate8State && gate7State && gate6State && gate5State
+                    && gate4State && gate3State && gate2State)
+            PreguntaPuerta("/view/preguntasPuertas.fxml" , event, 1);
+            else 
+                JOptionPane.showMessageDialog(null, "Se deben abrir primero todas las puertas para abrir la sala final");
         }
         
         public void recibirRpt (String texto){
@@ -132,7 +139,37 @@ public class EscenarioController implements Initializable {
                     JOptionPane.showMessageDialog(null, "CofreAbierto");              
                 } 
             }
-        }       
+        }      
+       
+        public void setStateGates(boolean gate1, boolean gate2, boolean gate3
+        , boolean gate4, boolean gate5, boolean gate6, boolean gate7, boolean gate8){
+            gate8State = gate8;
+            gate7State = gate7;
+            gate6State = gate6;
+            gate5State = gate5;
+            gate4State = gate4;
+            gate3State = gate3;
+            gate2State = gate2;
+            gate1State = gate1;
+            if (gate8State)
+                this.gate8.setVisible(false);
+            if (gate7State)
+                this.gate7.setVisible(false);
+            if (gate6State)
+                this.gate6.setVisible(false);
+            if (gate5State)
+                this.gate5.setVisible(false);
+            if (gate4State)
+                this.gate4.setVisible(false);
+            if (gate3State)
+                this.gate3.setVisible(false);
+            if (gate2State)
+                this.gate2.setVisible(false);
+            if (gate1State)
+                this.gate1.setVisible(false);  
+        }
+        
+        
         
         
         public void loadStage(String url, Event evt)throws Exception{
@@ -147,23 +184,54 @@ public class EscenarioController implements Initializable {
         Parent root = (Parent) FXMLLoader.load(getClass().getResource(url));
         Scene EscenaNueva = new Scene(root);
         Stage StageNuevo = new Stage();
-        StageNuevo.setScene(EscenaNueva);
+        StageNuevo.setScene(EscenaNueva);      
         StageNuevo.show();        
         
      }
         
-        public void preguntaPuerta()throws Exception{   
+        public void PreguntaPuerta(String Url, Event evt, int numGate)throws Exception{   
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/view/preguntasPuertas.fxml"));
+            fxmlLoader.setLocation(getClass().getResource(Url));
 
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);
             
-            PreguntasPuertasController Pregunta = (PreguntasPuertasController)fxmlLoader.getController();
-            Pregunta.recibirParametros2("Prueba Texto");
+            PreguntasPuertasController Puerta = (PreguntasPuertasController)fxmlLoader.getController();
+            Puerta.getStateGates(gate8State,gate7State,gate6State,gate5State
+            ,gate4State,gate3State,gate2State,gate1State);
+            Puerta.setPuertaActual(numGate);
             stage.show();
+            
+            Object evtSource = evt.getSource();
+            Node NodoSource = (Node) evtSource;
+            Scene EscenaAnt = NodoSource.getScene();
+            Window VentanaActual = EscenaAnt.getWindow();
+            Stage stage1 = (Stage) VentanaActual;
+            stage1.hide();
+     }
+        
+        public void PreguntaCofres(String Url, Event evt)throws Exception{   
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(Url));
+
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            
+            PreguntasCofresController Cofre = (PreguntasCofresController)fxmlLoader.getController();
+            Cofre.getStateGates(gate8State, gate7State, gate6State, gate5State,
+                    gate4State, gate3State, gate2State, gate1State);
+            stage.show();
+            
+            Object evtSource = evt.getSource();
+            Node NodoSource = (Node) evtSource;
+            Scene EscenaAnt = NodoSource.getScene();
+            Window VentanaActual = EscenaAnt.getWindow();
+            Stage stage1 = (Stage) VentanaActual;
+            stage1.hide();
      }
 
     /**
@@ -172,8 +240,8 @@ public class EscenarioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        EscenarioVentana = this;
-        gate8.setVisible(false);
+        //EscenarioVentana = this;
+        //gate8.setVisible(false);
     }    
     
 }

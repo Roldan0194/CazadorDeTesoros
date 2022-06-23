@@ -33,13 +33,23 @@ public class PreguntasPuertasController implements Initializable {
         
         public Label Pregunta;
         
+        public int puertaActual;
+        
+        public boolean gate8State, gate7State, gate6State, gate5State, 
+                gate4State, gate3State, gate2State, gate1State ;
+        
         public void handleButtonRpt1(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaCorrecta", event);
+            setStateTheGate(puertaActual);
             JOptionPane.showMessageDialog(null, "Respuesta correcta puerta abierta");
+            EnvioRespuesta("RespuestaCorrecta", event);
         }
         public void handleButtonRpt2(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaIncorrecta", event);
             JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
+            /*if (gate1State)
+                JOptionPane.showMessageDialog(null, "true");
+            else
+                JOptionPane.showMessageDialog(null, "false");*/
+            EnvioRespuesta("RespuestaIncorrecta", event);
         }
         public void handleButtonRpt3(ActionEvent event)throws Exception{
             EnvioRespuesta("RespuestaIncorrecta", event);
@@ -57,7 +67,53 @@ public class PreguntasPuertasController implements Initializable {
         public void recibirParametros2( String Text){
             Pregunta.setText(Text);
         }
-    
+        
+        public void getStateGates(boolean gate8, boolean gate7, boolean gate6
+        , boolean gate5, boolean gate4, boolean gate3, boolean gate2, boolean gate1){
+            gate8State = gate8;
+            gate7State = gate7;
+            gate6State = gate6;
+            gate5State = gate5;
+            gate4State = gate4;
+            gate3State = gate3;
+            gate2State = gate2;
+            gate1State = gate1;
+        }
+        
+        public void setStateTheGate(int num){
+            switch(num){
+                case 1:
+                       gate1State = true;
+                    break;
+                case 2:
+                       gate2State = true;
+                    break;
+                case 3:
+                       gate3State = true;
+                    break;
+                case 4:
+                       gate4State = true;
+                    break;
+                case 5:
+                       gate5State = true;
+                    break;
+                case 6:
+                       gate6State = true;
+                    break;
+                case 7:
+                       gate7State = true;
+                    break;
+                case 8:
+                       gate8State = true;
+                    break; 
+            }
+        }
+        
+        public void setPuertaActual(int num){
+            puertaActual = num;
+        }
+        
+        
         public void loadStage(String url, Event evt)throws Exception{
         
         Object evtSource = evt.getSource();
@@ -85,7 +141,8 @@ public class PreguntasPuertasController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             
             EscenarioController Escenario = (EscenarioController)fxmlLoader.getController();
-            Escenario.recibirRpt(Rpt);
+            //Escenario.recibirRpt(Rpt);
+            Escenario.setStateGates(gate1State, gate2State, gate3State, gate4State, gate5State, gate6State, gate7State, gate8State);
             stage.show();
             
             Object evtSource = evt.getSource();
