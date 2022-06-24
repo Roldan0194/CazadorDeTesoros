@@ -33,10 +33,15 @@ public class PreguntasPuertasController implements Initializable {
         
         public Label Pregunta;
         
-        public int puertaActual;
+        public int puertaActual, puntajeActual;
         
         public boolean gate8State, gate7State, gate6State, gate5State, 
                 gate4State, gate3State, gate2State, gate1State ;
+        public boolean cofre9State, cofre8State, cofre7State, cofre6State, cofre5State, 
+                cofre4State, cofre3State, cofre2State, cofre1State ;
+        public int intCofre9, intCofre8 , intCofre7, intCofre6 , intCofre5,
+                intCofre4, intCofre3, intCofre2, intCofre1;  
+
         
         public void handleButtonRpt1(ActionEvent event)throws Exception{
             setStateTheGate(puertaActual);
@@ -59,13 +64,9 @@ public class PreguntasPuertasController implements Initializable {
             EnvioRespuesta("RespuestaIncorrecta", event);
             JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
         }
-        @FXML
-        public void recibirParametros(EscenarioController Escenario1, String Text){
-            Pregunta.setText(Text);
-            Escenario = Escenario1;
-        }
-        public void recibirParametros2( String Text){
-            Pregunta.setText(Text);
+        
+        public void getPuntajeActual(int num){
+            puntajeActual = num;
         }
         
         public void getStateGates(boolean gate8, boolean gate7, boolean gate6
@@ -113,6 +114,31 @@ public class PreguntasPuertasController implements Initializable {
             puertaActual = num;
         }
         
+        public void getEstadoCofres(boolean cofre1, boolean cofre2, boolean cofre3,
+        boolean cofre4, boolean cofre5, boolean cofre6, boolean cofre7, boolean cofre8, boolean cofre9){
+            cofre1State = cofre1;
+            cofre2State = cofre2;
+            cofre3State = cofre3;
+            cofre4State = cofre4;
+            cofre5State = cofre5;
+            cofre6State = cofre6;
+            cofre7State = cofre7;
+            cofre8State = cofre8;
+            cofre9State = cofre9;
+        }
+        
+        public void getIntentos(int num1, int num2, int num3, int num4, int num5
+                , int num6, int num7, int num8, int num9){
+            intCofre1 = num1;
+            intCofre2 = num2;
+            intCofre3 = num3;
+            intCofre4 = num4;
+            intCofre5 = num5;
+            intCofre6 = num6;
+            intCofre7 = num7;
+            intCofre8 = num8;
+            intCofre9 = num9;
+        }
         
         public void loadStage(String url, Event evt)throws Exception{
         
@@ -142,7 +168,13 @@ public class PreguntasPuertasController implements Initializable {
             
             EscenarioController Escenario = (EscenarioController)fxmlLoader.getController();
             //Escenario.recibirRpt(Rpt);
-            Escenario.setStateGates(gate1State, gate2State, gate3State, gate4State, gate5State, gate6State, gate7State, gate8State);
+            Escenario.setStateGates(gate1State, gate2State, gate3State, gate4State, gate5State,
+                    gate6State, gate7State, gate8State);
+            Escenario.setEstadoCofres(cofre1State, cofre2State, cofre3State, cofre4State, 
+                    cofre5State, cofre6State, cofre7State, cofre8State, cofre9State);
+            Escenario.setIntentos(intCofre1, intCofre2, intCofre3, intCofre4, intCofre5, 
+                    intCofre6, intCofre7, intCofre8, intCofre9);
+            Escenario.setPuntajeActual(puntajeActual);
             stage.show();
             
             Object evtSource = evt.getSource();

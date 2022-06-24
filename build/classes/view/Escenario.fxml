@@ -13,9 +13,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label fx:id="labelPruebas" layoutX="441.0" layoutY="798.0" prefHeight="97.0" prefWidth="217.0" text="Cofre y puerta funcional encima del texto" wrapText="true">
+      <Label fx:id="labelPuntajeActual" alignment="CENTER" layoutX="201.0" layoutY="856.0" prefHeight="44.0" prefWidth="276.0" text="Puntaje: 0 Puntos" wrapText="true">
          <font>
-            <Font size="20.0" />
+            <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
       <Button fx:id="btnCofre2" layoutX="540.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleButtonCofre2" opacity="0.0" prefHeight="44.0" prefWidth="71.0" text="btnC2">
