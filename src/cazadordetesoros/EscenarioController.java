@@ -50,26 +50,74 @@ public class EscenarioController implements Initializable {
         //METODOS DE LOS BOTONES DE LOS COFRES
         @FXML
         public void handleButtonCofre1(ActionEvent event)throws Exception{
-                       
+            if (gate1State && !cofre1State && intCofre1 != 2)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 1);
+            else if(cofre1State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre1 == 2)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta");            
         }
         public void handleButtonCofre2(ActionEvent event) throws Exception{
-            
-            
+            if (gate1State && !cofre2State && intCofre2 != 2)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 2);
+            else if(cofre2State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre2 == 2)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta");            
         }
         public void handleButtonCofre3(ActionEvent event) throws Exception{
-            
+            if (gate1State && !cofre3State && intCofre3 != 3)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 3);
+            else if(cofre3State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre3 == 3)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         public void handleButtonCofre4(ActionEvent event) throws Exception{
-            
+            if (gate2State && !cofre4State && intCofre4 != 2)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 4);
+            else if(cofre4State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre4 == 2)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         public void handleButtonCofre5(ActionEvent event) throws Exception{
-            
+            if (gate3State && !cofre5State && intCofre5 != 2)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 5);
+            else if(cofre5State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre5 == 2)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         public void handleButtonCofre6(ActionEvent event) throws Exception{
-            
+            if (gate4State && !cofre6State && intCofre6 != 2)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 6);
+            else if(cofre6State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre6 == 2)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         public void handleButtonCofre7(ActionEvent event) throws Exception{
-            
+            if (gate5State && !cofre7State && intCofre7 != 2)
+                PreguntaCofres("/view/preguntasCofres.fxml",event, 7);
+            else if(cofre7State)
+                JOptionPane.showMessageDialog(null, "Este Cofre ya esta abierto"); 
+            else if(intCofre7 == 2)
+                JOptionPane.showMessageDialog(null, "Ya se usaron los dos intentos permitidos"); 
+            else
+                JOptionPane.showMessageDialog(null, "Se debe abrir primero la puerta"); 
         }
         public void handleButtonCofre8(ActionEvent event) throws Exception{
             if (gate6State && !cofre8State && intCofre8 != 2)
