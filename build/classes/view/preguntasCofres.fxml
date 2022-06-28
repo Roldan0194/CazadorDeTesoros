@@ -13,27 +13,27 @@
             <Font name="Lucida Handwriting Italic" size="31.0" />
          </font>
       </Label>
-      <Label fx:id="Pregunta" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="98.0" layoutY="190.0" prefHeight="334.0" prefWidth="518.0" text="●Una persona se levanta en plena noche, descubriendo que en su habitación no hay luz. Intenta abrir un cajón de calcetines en el que hay 10 de color negro y otros 10 de color azul. ¿Cuántos tiene que coger para obtener un par de color idéntico con total seguridad?" wrapText="true">
+      <Label fx:id="Pregunta" alignment="CENTER" contentDisplay="TOP" layoutX="98.0" layoutY="190.0" prefHeight="334.0" prefWidth="518.0" text="Pregunta" wrapText="true">
          <font>
             <Font name="Lucida Handwriting Italic" size="25.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="158.0" prefHeight="64.0" prefWidth="450.0" text="11 Calcetines">
+      <Label fx:id="Respuesta1" alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="158.0" prefHeight="64.0" prefWidth="450.0" text="11 Calcetines">
          <font>
             <Font name="Lucida Handwriting Italic" size="21.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="275.0" prefHeight="64.0" prefWidth="450.0" text="3 Calcetines">
+      <Label fx:id="Respuesta2" alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="275.0" prefHeight="64.0" prefWidth="450.0" text="3 Calcetines">
          <font>
             <Font name="Lucida Handwriting Italic" size="21.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="409.0" prefHeight="64.0" prefWidth="450.0" text="20 Calcetines">
+      <Label fx:id="Respuesta3" alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="409.0" prefHeight="64.0" prefWidth="450.0" text="20 Calcetines">
          <font>
             <Font name="Lucida Handwriting Italic" size="21.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="542.0" prefHeight="64.0" prefWidth="450.0" text="10 Calcetines">
+      <Label fx:id="Respuesta4" alignment="CENTER" contentDisplay="CENTER" layoutX="759.0" layoutY="542.0" prefHeight="64.0" prefWidth="450.0" text="10 Calcetines">
          <font>
             <Font name="Lucida Handwriting Italic" size="21.0" />
          </font>

@@ -29,27 +29,20 @@ import javax.swing.JOptionPane;
  * @author Roldan
  */
 public class PreguntasPuertasController implements Initializable {
-    
-        EscenarioController Escenario;
+        
+    //Variables de clase
         public Button btnPuerta;
-        
         public Label Pregunta, Respuesta1, Respuesta2, Respuesta3, Respuesta4;
-        
         public List<String> preguntaActual;
-        
         public int puertaActual, puntajeActual;
-        
         public boolean gate8State, gate7State, gate6State, gate5State, 
                 gate4State, gate3State, gate2State, gate1State ;
         public boolean cofre9State, cofre8State, cofre7State, cofre6State, cofre5State, 
                 cofre4State, cofre3State, cofre2State, cofre1State ;
         public int intCofre9, intCofre8 , intCofre7, intCofre6 , intCofre5,
                 intCofre4, intCofre3, intCofre2, intCofre1;  
-
-        
+        //Metodos botones respuesta
         public void handleButtonRpt1(ActionEvent event)throws Exception{
-            //setStateTheGate(puertaActual);
-            //JOptionPane.showMessageDialog(null, "Respuesta correcta puerta abierta");
             validarPregunta(puertaActual,1);
             EnvioRespuesta(event);
         }
@@ -65,11 +58,11 @@ public class PreguntasPuertasController implements Initializable {
             validarPregunta(puertaActual,4);
             EnvioRespuesta(event);
         }
-        
+        // Metodo obtener pubtaje actual
         public void getPuntajeActual(int num){
             puntajeActual = num;
         }
-        
+        // Metodo obtener estado puertas
         public void getStateGates(boolean gate8, boolean gate7, boolean gate6
         , boolean gate5, boolean gate4, boolean gate3, boolean gate2, boolean gate1){
             gate8State = gate8;
@@ -81,7 +74,7 @@ public class PreguntasPuertasController implements Initializable {
             gate2State = gate2;
             gate1State = gate1;
         }
-        
+        // Metodo cambiar estado a una puerta
         public void setStateTheGate(int num){
             switch(num){
                 case 1:
@@ -110,11 +103,11 @@ public class PreguntasPuertasController implements Initializable {
                     break; 
             }
         }
-        
+        //Metodo obtener puerta actual
         public void setPuertaActual(int num){
             puertaActual = num;
         }
-        
+        //Metodo obtener estado de cofres
         public void getEstadoCofres(boolean cofre1, boolean cofre2, boolean cofre3,
         boolean cofre4, boolean cofre5, boolean cofre6, boolean cofre7, boolean cofre8, boolean cofre9){
             cofre1State = cofre1;
@@ -127,7 +120,7 @@ public class PreguntasPuertasController implements Initializable {
             cofre8State = cofre8;
             cofre9State = cofre9;
         }
-        
+        //Metodo obtener cantidad de intentos por cofre
         public void getIntentos(int num1, int num2, int num3, int num4, int num5
                 , int num6, int num7, int num8, int num9){
             intCofre1 = num1;
@@ -140,7 +133,7 @@ public class PreguntasPuertasController implements Initializable {
             intCofre8 = num8;
             intCofre9 = num9;
         }
-        
+        //Metodo selecciobar pregunta actual
         public void setPregunta(int numPuerta){
             List<String> pregunta = new ArrayList<String>();
             pregunta = ObtenerPreguntas(numPuerta - 1);
@@ -150,7 +143,7 @@ public class PreguntasPuertasController implements Initializable {
             Respuesta3.setText(pregunta.get(3));
             Respuesta4.setText(pregunta.get(4));
         }
-                      
+        //Metodo validar respuesta  
         public void validarPregunta(int numPuerta, int numRespuesta){
             List<String> pregunta = new ArrayList<String>();
             pregunta = ObtenerPreguntas(numPuerta - 1);
@@ -161,7 +154,7 @@ public class PreguntasPuertasController implements Initializable {
             else
                 JOptionPane.showMessageDialog(null, "Respuesta incorrecta ");
         }
-        
+        //Metodo para seleccionar pregunta
         public List<String> ObtenerPreguntas(int NumPregunta){
         
         List<String> pregunta1 = new ArrayList<String>();
@@ -241,7 +234,7 @@ public class PreguntasPuertasController implements Initializable {
         
         return preguntasPuertas.get(NumPregunta);
     }
-        
+        //Metodo de apertura de esceneario y envio de variables con estado actual
         public void EnvioRespuesta(Event evt)throws Exception{   
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/view/Escenario.fxml"));

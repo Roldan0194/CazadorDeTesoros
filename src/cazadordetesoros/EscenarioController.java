@@ -186,11 +186,12 @@ public class EscenarioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Se deben abrir primero todas las puertas para abrir la sala final");
         }
               
+        // Metodo Obtener Puntaje Actual
         public void setPuntajeActual(int num){
             puntajeActual = num;
             labelPuntajeActual.setText("Puntaje: " + puntajeActual + " puntos");
         }
-       
+       // Metodo estado actual puertas
         public void setStateGates(boolean gate1, boolean gate2, boolean gate3
         , boolean gate4, boolean gate5, boolean gate6, boolean gate7, boolean gate8){
             gate8State = gate8;
@@ -218,7 +219,7 @@ public class EscenarioController implements Initializable {
             if (gate1State)
                 this.gate1.setVisible(false);  
         }
-        
+        // Metodo estado actual cofres
         public void setEstadoCofres(boolean cofre1, boolean cofre2, boolean cofre3,
         boolean cofre4, boolean cofre5, boolean cofre6, boolean cofre7, boolean cofre8, boolean cofre9){
             cofre1State = cofre1;
@@ -231,7 +232,7 @@ public class EscenarioController implements Initializable {
             cofre8State = cofre8;
             cofre9State = cofre9;
         }
-        
+        // Metodo cantidad de intentos por cofre
         public void setIntentos(int num1, int num2, int num3, int num4, int num5
                 , int num6, int num7, int num8, int num9){
             intCofre1 = num1;
@@ -244,25 +245,7 @@ public class EscenarioController implements Initializable {
             intCofre8 = num8;
             intCofre9 = num9;
         }
-              
-        
-        public void loadStage(String url, Event evt)throws Exception{
-        
-        Object evtSource = evt.getSource();
-        Node NodoSource = (Node) evtSource;
-        Scene EscenaAnt = NodoSource.getScene();
-        Window VentanaActual = EscenaAnt.getWindow();
-        Stage stage = (Stage) VentanaActual;
-        stage.hide();
-               
-        Parent root = (Parent) FXMLLoader.load(getClass().getResource(url));
-        Scene EscenaNueva = new Scene(root);
-        Stage StageNuevo = new Stage();
-        StageNuevo.setScene(EscenaNueva);      
-        StageNuevo.show();        
-        
-     }
-        
+        // Metodo abrir ventana de pregunta de puerta
         public void PreguntaPuerta(String Url, Event evt, int numGate)throws Exception{   
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource(Url));
@@ -291,7 +274,7 @@ public class EscenarioController implements Initializable {
             Stage stage1 = (Stage) VentanaActual;
             stage1.hide();
      }
-        
+        //metodo de abrir ventana pregunta de cofre
         public void PreguntaCofres(String Url, Event evt, int numCofre)throws Exception{   
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource(Url));
@@ -310,6 +293,7 @@ public class EscenarioController implements Initializable {
                     intCofre6, intCofre7, intCofre8, intCofre9);
             Cofre.setCofreActual(numCofre);
             Cofre.getPuntajeActual(puntajeActual);
+            Cofre.setPregunta(numCofre);
             stage.show();
             
             Object evtSource = evt.getSource();
