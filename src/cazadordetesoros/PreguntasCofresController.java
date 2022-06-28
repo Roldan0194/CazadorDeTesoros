@@ -174,75 +174,75 @@ public class PreguntasCofresController implements Initializable {
         public List<String> ObtenerPreguntas(int NumPregunta){
         
         List<String> pregunta1 = new ArrayList<String>();
-        pregunta1.add("Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? ");
-        pregunta1.add("102 Km*");
-        pregunta1.add("98 Km");
-        pregunta1.add("112 Km");
-        pregunta1.add("120 Km");
+        pregunta1.add("Hay algo que, aunque te pertenezca, la gente siempre lo utiliza más que tú.");
+        pregunta1.add("Tu Nombre*");
+        pregunta1.add("Tu Apellido");
+        pregunta1.add("Tu Celular");
+        pregunta1.add("Tu Edad");
         pregunta1.add("1");
         
         List<String> pregunta2 = new ArrayList<String>();
-        pregunta2.add("Pregunta2");
-        pregunta2.add("Rpt1");
-        pregunta2.add("Rpt2");
-        pregunta2.add("Rpt3*");
-        pregunta2.add("Rpt4");
+        pregunta2.add("Irma tiene el doble de edad que su hermano Manuel, pero la mitad de su padre. Dentro de 50 años, Manuel tendrá la mitad de edad que su padre. Entonces, ¿qué edad tiene Irma?");
+        pregunta2.add("55");
+        pregunta2.add("60");
+        pregunta2.add("50*");
+        pregunta2.add("80");
         pregunta2.add("3");
         
         List<String> pregunta3 = new ArrayList<String>();
-        pregunta3.add("Pregunta3");
-        pregunta3.add("Rpt1");
-        pregunta3.add("Rpt2*");
-        pregunta3.add("Rpt3");
-        pregunta3.add("Rpt4");
+        pregunta3.add(" En una carrera, un corredor adelanta al que va segundo. ¿En qué lugar queda al llegar a la meta?");
+        pregunta3.add("Primero");
+        pregunta3.add("Segundo*");
+        pregunta3.add("Tercero");
+        pregunta3.add("Ultimo");
         pregunta3.add("2");
         
         List<String> pregunta4 = new ArrayList<String>();
-        pregunta4.add("Pregunta4");
-        pregunta4.add("Rpt1*");
-        pregunta4.add("Rpt2");
-        pregunta4.add("Rpt3");
-        pregunta4.add("Rpt4");
+        pregunta4.add("El reloj situado en la Puerta del Sol tarda un segundo en dar una campanada. ¿Cuánto tardará en dar doce campanadas?");
+        pregunta4.add("11 Segundos*");
+        pregunta4.add("12 Segundos");
+        pregunta4.add("15 Segundos");
+        pregunta4.add("10 Segundos");
         pregunta4.add("1");
         
         List<String> pregunta5 = new ArrayList<String>();
-        pregunta5.add("Pregunta5");
-        pregunta5.add("Rpt1");
-        pregunta5.add("Rpt2");
-        pregunta5.add("Rpt3");
-        pregunta5.add("Rpt4*");
+        pregunta5.add("Una persona se levanta en plena noche, descubriendo que en su habitación no hay luz. Intenta abrir un cajón de calcetines en el que hay 10 de color negro y otros 10 de color azul. ¿Cuántos tiene que coger para obtener un par de color idéntico con total seguridad?");
+        pregunta5.add("19 Calcetines");
+        pregunta5.add("15 Calcetines");
+        pregunta5.add("20 Calcetines");
+        pregunta5.add("11 Calcetines*");
         pregunta5.add("4");
         
         List<String> pregunta6 = new ArrayList<String>();
-        pregunta6.add("Pregunta6");
-        pregunta6.add("Rpt1*");
-        pregunta6.add("Rpt2");
-        pregunta6.add("Rpt3");
-        pregunta6.add("Rpt4");
+        pregunta6.add("Al leer un libro, si contás de la página 68 a la 98, ¿cuántas veces encontrarás el número 8?");
+        pregunta6.add("14*");
+        pregunta6.add("15");
+        pregunta6.add("20");
+        pregunta6.add("8");
         pregunta6.add("1");
         
         List<String> pregunta7 = new ArrayList<String>();
-        pregunta7.add("Pregunta7");
-        pregunta7.add("Rpt1");
-        pregunta7.add("Rpt2");
-        pregunta7.add("Rpt3*");
-        pregunta7.add("Rpt4");
+        pregunta7.add("Dos maestros y 8 alumnos tienen que repartirse 5 ciruelas. Como los docentes no tienen hambre, prefieren repartirlas entre los alumnos. ¿Qué deben hacer para conseguir un reparto justo entre los alumnos? ");
+        pregunta7.add("Cortar cada ciruela en 7 trozos iguales y repartir 5 entre los alumnos.");
+        pregunta7.add("Cortar cada ciruela en 9 trozos iguales y repartir 5 entre los alumnos.");
+        pregunta7.add("Cortar cada ciruela en 8 trozos iguales y repartir 5 entre los alumnos.*");
+        pregunta7.add("Cortar cada ciruela en 10 trozos iguales y repartir 5 entre los alumnos.");
         pregunta7.add("3");
         
         List<String> pregunta8 = new ArrayList<String>();
-        pregunta8.add("Pregunta8");
-        pregunta8.add("Rpt1");
-        pregunta8.add("Rpt2*");
-        pregunta8.add("Rpt3");
-        pregunta8.add("Rpt4");
+        pregunta8.add("En un número de tres dígitos, el del medio es 4 veces más grande que el tercero y el primero es tres unidades menos que el segundo. ¿De qué número se trata?");
+        pregunta8.add("252");
+        pregunta8.add("141*");
+        pregunta8.add("143");
+        pregunta8.add("256");
         pregunta8.add("2");
         
         List<String> pregunta9 = new ArrayList<String>();
-        pregunta9.add("Pregunta9");
-        pregunta9.add("Rpt1*");
-        pregunta9.add("Rpt2");
-        pregunta9.add("Rpt3");
-        pregunta9.add("Rpt4");
+        pregunta9.add("Un padre explica a sus hijos que tiene 130 nueces. Entonces, les pide que las dividan en dos partes, de manera tal que la más pequeña multiplicada por 4 sea igual a la parte más grande dividida entre 3. ¿Cómo queda el reparto de nueces? ");
+        pregunta9.add("120 y 10 nueces*");
+        pregunta9.add("115 y 8 nueces");
+        pregunta9.add("125 y 11 nueces");
+        pregunta9.add("90 y 30 nueces");
         pregunta9.add("1");
         
         List<List<String>> preguntasCofres = new ArrayList<>();

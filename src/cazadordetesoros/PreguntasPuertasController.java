@@ -77,30 +77,14 @@ public class PreguntasPuertasController implements Initializable {
         // Metodo cambiar estado a una puerta
         public void setStateTheGate(int num){
             switch(num){
-                case 1:
-                       gate1State = true;
-                    break;
-                case 2:
-                       gate2State = true;
-                    break;
-                case 3:
-                       gate3State = true;
-                    break;
-                case 4:
-                       gate4State = true;
-                    break;
-                case 5:
-                       gate5State = true;
-                    break;
-                case 6:
-                       gate6State = true;
-                    break;
-                case 7:
-                       gate7State = true;
-                    break;
-                case 8:
-                       gate8State = true;
-                    break; 
+                case 1 -> gate1State = true;
+                case 2 -> gate2State = true;
+                case 3 -> gate3State = true;
+                case 4 -> gate4State = true;
+                case 5 -> gate5State = true;
+                case 6 -> gate6State = true;
+                case 7 -> gate7State = true;
+                case 8 -> gate8State = true; 
             }
         }
         //Metodo obtener puerta actual
@@ -158,67 +142,67 @@ public class PreguntasPuertasController implements Initializable {
         public List<String> ObtenerPreguntas(int NumPregunta){
         
         List<String> pregunta1 = new ArrayList<String>();
-        pregunta1.add("Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? ");
-        pregunta1.add("102 Km*");
-        pregunta1.add("98 Km");
-        pregunta1.add("112 Km");
-        pregunta1.add("120 Km");
+        pregunta1.add("Qué letra es la siguiente en la secuencia U-D-T-C-C-S-S-O-N");
+        pregunta1.add("D*");
+        pregunta1.add("O");
+        pregunta1.add("T");
+        pregunta1.add("C");
         pregunta1.add("1");
         
         List<String> pregunta2 = new ArrayList<String>();
-        pregunta2.add("Pregunta2");
-        pregunta2.add("Rpt1");
-        pregunta2.add("Rpt2");
-        pregunta2.add("Rpt3*");
-        pregunta2.add("Rpt4");
+        pregunta2.add("Si en una caja de 5 docenas de huevos, 3 de cada decena están rotos, ¿cuántos huevos sanos quedan?");
+        pregunta2.add("14 huevos");
+        pregunta2.add("20 huevos");
+        pregunta2.add("18 huevos*");
+        pregunta2.add("12 huevos");
         pregunta2.add("3");
         
         List<String> pregunta3 = new ArrayList<String>();
-        pregunta3.add("Pregunta3");
-        pregunta3.add("Rpt1");
-        pregunta3.add("Rpt2*");
-        pregunta3.add("Rpt3");
-        pregunta3.add("Rpt4");
+        pregunta3.add("Para tratar de resolver sin calculadora, ¿por cuánto hay que multiplicar 21978 para que el resultado sea 87912?");
+        pregunta3.add("5");
+        pregunta3.add("4*");
+        pregunta3.add("3");
+        pregunta3.add("6");
         pregunta3.add("2");
         
         List<String> pregunta4 = new ArrayList<String>();
-        pregunta4.add("Pregunta4");
-        pregunta4.add("Rpt1*");
-        pregunta4.add("Rpt2");
-        pregunta4.add("Rpt3");
-        pregunta4.add("Rpt4");
+        pregunta4.add("Este es para resolver en pocos segundos. A 1000 sumale 40, luego 1000, 30, 1000, 20, 1000 y, por último, 10. ¿Cuánto da la cuenta?");
+        pregunta4.add("4100*");
+        pregunta4.add("4200");
+        pregunta4.add("4500");
+        pregunta4.add("4110");
         pregunta4.add("1");
         
         List<String> pregunta5 = new ArrayList<String>();
-        pregunta5.add("Pregunta5");
-        pregunta5.add("Rpt1");
-        pregunta5.add("Rpt2");
-        pregunta5.add("Rpt3");
-        pregunta5.add("Rpt4*");
+        pregunta5.add("Son las doce del medio día, hora de mis pastillas. Me tengo que tomar 4 pastillas, una cada hora. ¿A qué hora me tomaré la última?");
+        pregunta5.add("4 PM");
+        pregunta5.add("5 PM");
+        pregunta5.add("2 PM");
+        pregunta5.add("3 PM*");
         pregunta5.add("4");
         
         List<String> pregunta6 = new ArrayList<String>();
-        pregunta6.add("Pregunta6");
-        pregunta6.add("Rpt1*");
-        pregunta6.add("Rpt2");
-        pregunta6.add("Rpt3");
-        pregunta6.add("Rpt4");
+        pregunta6.add("Un bate y una pelota cuestan 110 € en conjunto. El bate cuesta 100 € más que la pelota. ¿Cuánto cuesta la pelota?");
+        pregunta6.add("5*");
+        pregunta6.add("10");
+        pregunta6.add("20");
+        pregunta6.add("15");
         pregunta6.add("1");
         
         List<String> pregunta7 = new ArrayList<String>();
-        pregunta7.add("Pregunta7");
-        pregunta7.add("Rpt1");
-        pregunta7.add("Rpt2");
-        pregunta7.add("Rpt3*");
-        pregunta7.add("Rpt4");
+        pregunta7.add("¿Cuál es el resultado de 3+3x3+3?");
+        pregunta7.add("21");
+        pregunta7.add("18");
+        pregunta7.add("15*");
+        pregunta7.add("12");
         pregunta7.add("3");
         
         List<String> pregunta8 = new ArrayList<String>();
-        pregunta8.add("Pregunta8");
-        pregunta8.add("Rpt1");
-        pregunta8.add("Rpt2*");
-        pregunta8.add("Rpt3");
-        pregunta8.add("Rpt4");
+        pregunta8.add("Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? ");
+        pregunta8.add("100 Km");
+        pregunta8.add("102 Km*");
+        pregunta8.add("95 Km");
+        pregunta8.add("400 Km");
         pregunta8.add("2");
         
         List<List<String>> preguntasPuertas = new ArrayList<>();

@@ -114,5 +114,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button fx:id="gate9" layoutX="291.0" layoutY="945.0" maxHeight="14.0" minHeight="14.0" mnemonicParsing="false" onAction="#handleButtonGate9" prefHeight="14.0" prefWidth="96.0" style="-fx-background-color: PERU;" text="gate8" textFill="PERU">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

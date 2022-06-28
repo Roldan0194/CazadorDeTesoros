@@ -31,7 +31,7 @@ import javax.swing.JOptionPane;
 public class EscenarioController implements Initializable {
         
         String Respuesta = "";
-        public Button gate8, gate7, gate6, gate5, gate4, gate3, gate2, gate1;
+        public Button gate9, gate8, gate7, gate6, gate5, gate4, gate3, gate2, gate1;
         public Button btnCofre9, btnCofre8, btnCofre7, btnCofre6, btnCofre5,
                 btnCofre4, btnCofre3, btnCofre2, btnCofre1;
         public boolean gate8State, gate7State, gate6State, gate5State, 
@@ -185,7 +185,17 @@ public class EscenarioController implements Initializable {
             else 
                 JOptionPane.showMessageDialog(null, "Se deben abrir primero todas las puertas para abrir la sala final");
         }
-              
+        
+        public void handleButtonGate9(ActionEvent event)throws Exception{
+            int option = JOptionPane.showConfirmDialog(null, "Desea volver al inicio?",
+                "YES_NO_OPTION", JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+            if (option == 0){
+                JOptionPane.showMessageDialog(null, "Su puntaje obtenido fue " + puntajeActual);
+                VolverInicio("/view/inicio.fxml",event);
+            }
+        }
+                     
         // Metodo Obtener Puntaje Actual
         public void setPuntajeActual(int num){
             puntajeActual = num;
@@ -303,13 +313,29 @@ public class EscenarioController implements Initializable {
             Stage stage1 = (Stage) VentanaActual;
             stage1.hide();
      }
+        
+     public void VolverInicio(String url, Event evt)throws Exception{
+        
+        Object evtSource = evt.getSource();
+        Node NodoSource = (Node) evtSource;
+        Scene EscenaAnt = NodoSource.getScene();
+        Window VentanaActual = EscenaAnt.getWindow();
+        Stage stage = (Stage) VentanaActual;
+        stage.hide();
+               
+        Parent root = (Parent) FXMLLoader.load(getClass().getResource(url));
+        Scene EscenaNueva = new Scene(root);
+        Stage StageNuevo = new Stage();
+        StageNuevo.setScene(EscenaNueva);      
+        StageNuevo.show();        
+        
+     }
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO        
     }    
     
 }
