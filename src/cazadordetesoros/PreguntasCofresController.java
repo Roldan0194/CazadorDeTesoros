@@ -5,6 +5,7 @@
 package cazadordetesoros;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -26,6 +27,7 @@ import javax.swing.JOptionPane;
 public class PreguntasCofresController implements Initializable {
     
         Label Pregunta;
+                             
         
         public int cofreActual, puntajeActual;
         
@@ -100,33 +102,15 @@ public class PreguntasCofresController implements Initializable {
         
         public void setIntentosCofres(int num){
             switch(num){
-                case 1:
-                       intCofre1 += 1;
-                    break;
-                case 2:
-                       intCofre2 += 1;
-                    break;
-                case 3:
-                       intCofre3 += 1;
-                    break;
-                case 4:
-                       intCofre4 += 1;
-                    break;
-                case 5:
-                       intCofre5 += 1;
-                    break;
-                case 6:
-                       intCofre6 += 1;
-                    break;
-                case 7:
-                       intCofre7 += 1;
-                    break;
-                case 8:
-                       intCofre8 += 1;
-                    break;
-                case 9:
-                       intCofre9 += 1;
-                    break;
+                case 1 -> intCofre1 += 1;
+                case 2 -> intCofre2 += 1;
+                case 3 -> intCofre3 += 1;
+                case 4 -> intCofre4 += 1;
+                case 5 -> intCofre5 += 1;
+                case 6 -> intCofre6 += 1;
+                case 7 -> intCofre7 += 1;
+                case 8 -> intCofre8 += 1;
+                case 9 -> intCofre9 += 1;
             }
         }
         

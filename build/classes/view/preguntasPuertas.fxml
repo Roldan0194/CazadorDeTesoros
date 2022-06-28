@@ -7,27 +7,27 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="1242.0" styleClass="preguntasPuertasBackground" stylesheets="@../Images/inicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cazadordetesoros.PreguntasPuertasController">
    <children>
-      <Label fx:id="Pregunta" alignment="CENTER" layoutX="94.0" layoutY="162.0" prefHeight="392.0" prefWidth="526.0" text="●Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? " textAlignment="JUSTIFY" wrapText="true">
+      <Label fx:id="Pregunta" alignment="CENTER" layoutX="94.0" layoutY="162.0" prefHeight="392.0" prefWidth="526.0" text="Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? " textAlignment="JUSTIFY" wrapText="true">
          <font>
             <Font name="Lucida Handwriting Italic" size="26.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="160.0" prefHeight="63.0" prefWidth="429.0" text="102 Km">
+      <Label fx:id="Respuesta1" layoutX="769.0" layoutY="160.0" prefHeight="63.0" prefWidth="429.0" text="102 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="277.0" prefHeight="63.0" prefWidth="429.0" text="110 Km">
+      <Label fx:id="Respuesta2" layoutX="769.0" layoutY="277.0" prefHeight="63.0" prefWidth="429.0" text="110 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="409.0" prefHeight="63.0" prefWidth="429.0" text="95 Km">
+      <Label fx:id="Respuesta3" layoutX="769.0" layoutY="409.0" prefHeight="63.0" prefWidth="429.0" text="95 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="769.0" layoutY="544.0" prefHeight="63.0" prefWidth="429.0" text="87 Km">
+      <Label fx:id="Respuesta4" layoutX="769.0" layoutY="544.0" prefHeight="63.0" prefWidth="429.0" text="87 Km">
          <font>
             <Font name="Lucida Handwriting Italic" size="20.0" />
          </font>

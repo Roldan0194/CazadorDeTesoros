@@ -5,6 +5,8 @@
 package cazadordetesoros;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -31,7 +33,9 @@ public class PreguntasPuertasController implements Initializable {
         EscenarioController Escenario;
         public Button btnPuerta;
         
-        public Label Pregunta;
+        public Label Pregunta, Respuesta1, Respuesta2, Respuesta3, Respuesta4;
+        
+        public List<String> preguntaActual;
         
         public int puertaActual, puntajeActual;
         
@@ -44,25 +48,22 @@ public class PreguntasPuertasController implements Initializable {
 
         
         public void handleButtonRpt1(ActionEvent event)throws Exception{
-            setStateTheGate(puertaActual);
-            JOptionPane.showMessageDialog(null, "Respuesta correcta puerta abierta");
-            EnvioRespuesta("RespuestaCorrecta", event);
+            //setStateTheGate(puertaActual);
+            //JOptionPane.showMessageDialog(null, "Respuesta correcta puerta abierta");
+            validarPregunta(puertaActual,1);
+            EnvioRespuesta(event);
         }
         public void handleButtonRpt2(ActionEvent event)throws Exception{
-            JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
-            /*if (gate1State)
-                JOptionPane.showMessageDialog(null, "true");
-            else
-                JOptionPane.showMessageDialog(null, "false");*/
-            EnvioRespuesta("RespuestaIncorrecta", event);
+            validarPregunta(puertaActual,2);
+            EnvioRespuesta(event);
         }
         public void handleButtonRpt3(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaIncorrecta", event);
-            JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
+            validarPregunta(puertaActual,3);
+            EnvioRespuesta(event);            
         }
         public void handleButtonRpt4(ActionEvent event)throws Exception{
-            EnvioRespuesta("RespuestaIncorrecta", event);
-            JOptionPane.showMessageDialog(null, "Respuesta incorrecta");
+            validarPregunta(puertaActual,4);
+            EnvioRespuesta(event);
         }
         
         public void getPuntajeActual(int num){
@@ -140,24 +141,108 @@ public class PreguntasPuertasController implements Initializable {
             intCofre9 = num9;
         }
         
-        public void loadStage(String url, Event evt)throws Exception{
+        public void setPregunta(int numPuerta){
+            List<String> pregunta = new ArrayList<String>();
+            pregunta = ObtenerPreguntas(numPuerta - 1);
+            Pregunta.setText(pregunta.get(0));
+            Respuesta1.setText(pregunta.get(1));
+            Respuesta2.setText(pregunta.get(2));
+            Respuesta3.setText(pregunta.get(3));
+            Respuesta4.setText(pregunta.get(4));
+        }
+                      
+        public void validarPregunta(int numPuerta, int numRespuesta){
+            List<String> pregunta = new ArrayList<String>();
+            pregunta = ObtenerPreguntas(numPuerta - 1);
+            if (numRespuesta == Integer.parseInt(pregunta.get(5))){
+                JOptionPane.showMessageDialog(null, "Respuesta correcta puerta abierta");
+                setStateTheGate(puertaActual);
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Respuesta incorrecta ");
+        }
         
-        Object evtSource = evt.getSource();
-        Node NodoSource = (Node) evtSource;
-        Scene EscenaAnt = NodoSource.getScene();
-        Window VentanaActual = EscenaAnt.getWindow();
-        Stage stage = (Stage) VentanaActual;
-        stage.hide();
+        public List<String> ObtenerPreguntas(int NumPregunta){
         
-        Parent root = (Parent) FXMLLoader.load(getClass().getResource(url));
-        Scene EscenaNueva = new Scene(root);
-        Stage StageNuevo = new Stage();
-        StageNuevo.setScene(EscenaNueva);
-        StageNuevo.show();        
+        List<String> pregunta1 = new ArrayList<String>();
+        pregunta1.add("Un oso recorre 26 km en dirección hacia el sur. Después, camina otros 19 km en dirección este. Por último, hace 57 km más hacia el norte, ¿cuántos kilómetros ha recorrido? ");
+        pregunta1.add("102 Km*");
+        pregunta1.add("98 Km");
+        pregunta1.add("112 Km");
+        pregunta1.add("120 Km");
+        pregunta1.add("1");
         
-     }
+        List<String> pregunta2 = new ArrayList<String>();
+        pregunta2.add("Pregunta2");
+        pregunta2.add("Rpt1");
+        pregunta2.add("Rpt2");
+        pregunta2.add("Rpt3*");
+        pregunta2.add("Rpt4");
+        pregunta2.add("3");
         
-        public void EnvioRespuesta(String Rpt, Event evt)throws Exception{   
+        List<String> pregunta3 = new ArrayList<String>();
+        pregunta3.add("Pregunta3");
+        pregunta3.add("Rpt1");
+        pregunta3.add("Rpt2*");
+        pregunta3.add("Rpt3");
+        pregunta3.add("Rpt4");
+        pregunta3.add("2");
+        
+        List<String> pregunta4 = new ArrayList<String>();
+        pregunta4.add("Pregunta4");
+        pregunta4.add("Rpt1*");
+        pregunta4.add("Rpt2");
+        pregunta4.add("Rpt3");
+        pregunta4.add("Rpt4");
+        pregunta4.add("1");
+        
+        List<String> pregunta5 = new ArrayList<String>();
+        pregunta5.add("Pregunta5");
+        pregunta5.add("Rpt1");
+        pregunta5.add("Rpt2");
+        pregunta5.add("Rpt3");
+        pregunta5.add("Rpt4*");
+        pregunta5.add("4");
+        
+        List<String> pregunta6 = new ArrayList<String>();
+        pregunta6.add("Pregunta6");
+        pregunta6.add("Rpt1*");
+        pregunta6.add("Rpt2");
+        pregunta6.add("Rpt3");
+        pregunta6.add("Rpt4");
+        pregunta6.add("1");
+        
+        List<String> pregunta7 = new ArrayList<String>();
+        pregunta7.add("Pregunta7");
+        pregunta7.add("Rpt1");
+        pregunta7.add("Rpt2");
+        pregunta7.add("Rpt3*");
+        pregunta7.add("Rpt4");
+        pregunta7.add("3");
+        
+        List<String> pregunta8 = new ArrayList<String>();
+        pregunta8.add("Pregunta8");
+        pregunta8.add("Rpt1");
+        pregunta8.add("Rpt2*");
+        pregunta8.add("Rpt3");
+        pregunta8.add("Rpt4");
+        pregunta8.add("2");
+        
+        List<List<String>> preguntasPuertas = new ArrayList<>();
+        preguntasPuertas.add(pregunta1);
+        preguntasPuertas.add(pregunta2);
+        preguntasPuertas.add(pregunta3);
+        preguntasPuertas.add(pregunta4);
+        preguntasPuertas.add(pregunta5);
+        preguntasPuertas.add(pregunta6);
+        preguntasPuertas.add(pregunta7);
+        preguntasPuertas.add(pregunta8);
+        
+        
+        return preguntasPuertas.get(NumPregunta);
+    }
+        
+        public void EnvioRespuesta(Event evt)throws Exception{   
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/view/Escenario.fxml"));
 
@@ -167,7 +252,6 @@ public class PreguntasPuertasController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             
             EscenarioController Escenario = (EscenarioController)fxmlLoader.getController();
-            //Escenario.recibirRpt(Rpt);
             Escenario.setStateGates(gate1State, gate2State, gate3State, gate4State, gate5State,
                     gate6State, gate7State, gate8State);
             Escenario.setEstadoCofres(cofre1State, cofre2State, cofre3State, cofre4State, 
@@ -183,7 +267,8 @@ public class PreguntasPuertasController implements Initializable {
             Window VentanaActual = EscenaAnt.getWindow();
             Stage stage1 = (Stage) VentanaActual;
             stage1.hide();
-     }
+     }  
+    
 
     
     /**

@@ -30,8 +30,6 @@ import javax.swing.JOptionPane;
  */
 public class EscenarioController implements Initializable {
         
-        //EscenarioController EscenarioVentana;
-        //PreguntasPuertasController PPuertas;
         String Respuesta = "";
         public Button gate8, gate7, gate6, gate5, gate4, gate3, gate2, gate1;
         public Button btnCofre9, btnCofre8, btnCofre7, btnCofre6, btnCofre5,
@@ -283,6 +281,7 @@ public class EscenarioController implements Initializable {
                     intCofre6, intCofre7, intCofre8, intCofre9);
             Puerta.setPuertaActual(numGate);
             Puerta.getPuntajeActual(puntajeActual);
+            Puerta.setPregunta(numGate);
             stage.show();
             
             Object evtSource = evt.getSource();
